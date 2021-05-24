@@ -65,7 +65,7 @@ I mainly work on 4th order degenerated parabolic equations, coupled Ginzburg-Lan
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://yuangaogao.github.io/pubs/</guid>
-      <description>Publication List  Gao, Y., and J. G. Liu. “Gradient flow formulation and second order numerical method for motion by mean curvature and contact line dynamics on rough surface.” Interfaces and Free Boundaries 23, no. 1: 103–58. (Apr 19, 2021) https://doi.org/10.4171/ifb/451. Full text:  Gao, Y., X. Y. Lu, and C. Wang. “Regularity and monotonicity for solutions to a continuum model of epitaxial growth with nonlocal elastic effects.” Advances in Calculus of Variations.</description>
+      <description>Publication List  1. Submitted Publications:  Gao, Y., J. G. Liu, and N. Wu. “Data-driven Efficient Solvers for Langevin Dynamics on Manifold in High Dimensions,” submitted. https://arxiv.org/abs/2005.12787 Gao, Y., J. G. Liu, and Z. Liu. “Existence and rigidity of the Peierls-Nabarro model for dislocations in high dimensions,” submitted, https://arxiv.org/abs/2006.08107 Gao, Y., T. Li, X. Li, and J. G. Liu. “Transition path theory for Langevin dynamics on manifold: optimal control and data-driven solver,” submitted.</description>
     </item>
     
     <item>
@@ -74,7 +74,7 @@ I mainly work on 4th order degenerated parabolic equations, coupled Ginzburg-Lan
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://yuangaogao.github.io/research/</guid>
-      <description>Recent Projects   Solid thin film growth   Epitaxial growth is a process in which adatoms are deposited on a substrate and grow a solid thin film on the substrate. Epitaxial growth on crystal surface involves various structures, one of which is described by step flow dynamics driven by misfit elasticity between thin film and the substrate.
+      <description>Recent Projects 1. Solid thin film growth Epitaxial growth is a process in which adatoms are deposited on a substrate and grow a solid thin film on the substrate. Epitaxial growth on crystal surface involves various structures, one of which is described by step flow dynamics driven by misfit elasticity between thin film and the substrate.
 The discrete Burton-Cabrera-Frank (BCF) type models have been proposed by Burton, Cabrera, Frank, Duport, Tersoff, et al.</description>
     </item>
     
