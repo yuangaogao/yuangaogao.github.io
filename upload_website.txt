@@ -1,3 +1,2 @@
 git add -A; git commit -m "Update in 0528."; git push -u origin master
-yuangaogao
 pixjat-bysnoz-0Fencu
