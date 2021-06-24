@@ -4,7 +4,20 @@
     <title>Dr. Yuan Gao on </title>
     <link>https://yuangaogao.github.io/</link>
     <description>Recent content in Dr. Yuan Gao on </description>
-    <generator>Hugo -- gohugo.io</generator><atom:link href="https://yuangaogao.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Thu, 20 May 2021 11:41:11 +0800</lastBuildDate><atom:link href="https://yuangaogao.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>My First Post</title>
+      <link>https://yuangaogao.github.io/posts/my-first-post/</link>
+      <pubDate>Thu, 20 May 2021 11:41:11 +0800</pubDate>
+      
+      <guid>https://yuangaogao.github.io/posts/my-first-post/</guid>
+      <description>Hugo usage Step 1: Install Hugo Homebrew and MacPorts, package managers for macOS, can be installed from brew.sh or macports.org respectively. See install if you are running Windows etc.
+brew install hugo # or port install hugo To verify your new install:
+hugo version Step 2: Create a New Site hugo new site quickstart The above will create a new Hugo site in a folder named quickstart.
+Step 3: Add a Theme See themes.</description>
+    </item>
+    
     <item>
       <title></title>
       <link>https://yuangaogao.github.io/backups/</link>
