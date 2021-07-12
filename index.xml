@@ -4,20 +4,7 @@
     <title>Dr. Yuan Gao on </title>
     <link>https://yuangaogao.github.io/</link>
     <description>Recent content in Dr. Yuan Gao on </description>
-    <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Thu, 20 May 2021 11:41:11 +0800</lastBuildDate><atom:link href="https://yuangaogao.github.io/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>My First Post</title>
-      <link>https://yuangaogao.github.io/posts/my-first-post/</link>
-      <pubDate>Thu, 20 May 2021 11:41:11 +0800</pubDate>
-      
-      <guid>https://yuangaogao.github.io/posts/my-first-post/</guid>
-      <description>Hugo usage Step 1: Install Hugo Homebrew and MacPorts, package managers for macOS, can be installed from brew.sh or macports.org respectively. See install if you are running Windows etc.
-brew install hugo # or port install hugo To verify your new install:
-hugo version Step 2: Create a New Site hugo new site quickstart The above will create a new Hugo site in a folder named quickstart.
-Step 3: Add a Theme See themes.</description>
-    </item>
-    
+    <generator>Hugo -- gohugo.io</generator><atom:link href="https://yuangaogao.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title></title>
       <link>https://yuangaogao.github.io/backups/</link>
@@ -68,8 +55,8 @@ United Kingdom
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://yuangaogao.github.io/about/</guid>
-      <description>Yuan Gao William W. Elliott Assistant Research Professor
- Department of Mathematics, Duke University Email：yg86@duke.edu Find me on Google Scholar or ResearchGate. Office：06 Physics Building, Durham, NC 27708   Current Appointments &amp;amp; Affiliations  William W. Elliott Assistant Research Professor, Mathematics, Trinity College of Arts &amp;amp; Sciences, 2019-2021 Assistant Research Professor of Mathematics, Mathematics, Trinity College of Arts &amp;amp; Sciences, 2019   Research Interests   PDE analysis and multiscale modeling in materials sciences  Crystal growth: high order degenerated parabolic equations, singularity characterization, mean field limit Dislocation: vectorial nonlocal Ginzburg-Landau systems, dynamic boundary condition, rigidity, metastability and slow motion    Numerical analysis and simulations for interface dynamics  Obstacle problem: contact line dynamics, lubrication approximation, phase field model Linear response theory: nonlocal model, surfactant dynamics, Peskin problem    Applied stochastic analysis and stochastic algorithm in data science  Reversible/irreversible Langevin dynamics: random walk on point clouds, transition path theory, optimal control, coarse-graining Surface hopping model: kinetic Monte Carlo, hydrodynamic limit, ergodicity Gradient flow and Hamiltonian flow: shape evolution in image science, accelerated sampling, parametric Bayesian inference     Contact Me  Address: 06 Physics Building, 120 Science Drive, NC 27708 Email: yg86@duke.</description>
+      <description>Yuan Gao Assistant Professor of Mathematics
+ Department of Mathematics, Purdue University Email：yg86@duke.edu Find me on Google Scholar or ResearchGate.   Current Appointments &amp;amp; Affiliations  Assistant Professor of Mathematics, Department of Mathematics, Purdue University, 2021-Now William W. Elliott Assistant Research Professor, Mathematics, Trinity College of Arts &amp;amp; Sciences, Duke University, 2019-2021 Assistant Research Professor of Mathematics, Mathematics, Trinity College of Arts &amp;amp; Sciences, 2019   Research Interests  PDE analysis and multiscale modeling in materials sciences  Crystal growth: high order degenerate parabolic equations, singularity characterization, hydrodynamic limit Dislocation: vectorial nonlocal Ginzburg-Landau systems, dynamic boundary condition, rigidity, metastability and slow motion   Numerical analysis and simulations for interface dynamics  Obstacle problem: contact line dynamics, lubrication approximation, phase field model, nonlocal model, surfactant dynamics   Applied stochastic analysis and stochastic algorithm  Reversible/irreversible Langevin dynamics: random walk on point clouds, transition path theory, optimal control, coarse-graining, ergodicity, large deviation, applications in image processing and sampling     Contact Me  Email: yg86@duke.</description>
     </item>
     
     <item>
