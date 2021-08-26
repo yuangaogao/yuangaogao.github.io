@@ -73,7 +73,7 @@ United Kingdom
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://yuangaogao.github.io/research/</guid>
-      <description>Recent Projects 1. Crystal growth Epitaxial growth is a process in which adatoms are deposited on a substrate and grow a solid thin film on the substrate. In general, PDEs modeling macroscopic dynamics in non-equilibrium dynamics are usually guided by the underlying competing mechanism at the microscopic level. Meanwhile, an effective description of the microscopic dynamics, using equilibrium Gibbs measure or non-equilibrium optimal twist measure, is suggested by macroscopic observations. We also derive the continuum limit PDE from the surface hopping process on lattice and give validations via kinetic Monte Carlo.</description>
+      <description>Recent Projects 1. Obstacle problem: moving contact lines, lubrication The dynamics and equilibrium of a droplet on a substrate are important problems with many practical applications such as coating, painting in industries and the adhesion of vesicles in biotechnology. Particularly, the contact line dynamics of a droplet placed on an inclined rough surface are challenging fluid mechanics problems dated back to Young in 1805. The capillary effect, which contributes the leading behaviors of the geometric motion of a small droplet, is characterized by the surface tensions on interfaces separating two different physical phases.</description>
     </item>
     
     <item>
