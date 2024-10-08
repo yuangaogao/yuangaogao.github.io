@@ -75,7 +75,8 @@ My research is supported by NSF Award DMS-2204288. PSU-Purdue-UMD Joint Seminar 
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://yuangaogao.github.io/research/</guid>
-      <description>Recent Projects 1. Obstacle problem: moving contact lines, lubrication The dynamics and equilibrium of a droplet on a substrate are important problems with many practical applications such as coating, painting in industries and the adhesion of vesicles in biotechnology. Particularly, the contact line dynamics of a droplet placed on an inclined rough surface are challenging fluid mechanics problems dated back to Young in 1805. The capillary effect, which contributes the leading behaviors of the geometric motion of a small droplet, is characterized by the surface tensions on interfaces separating two different physical phases.</description>
+      <description>Recent Projects 1. Macroscopic Dynamics for Nonequilibrium Chemical Reactions Most biochemical reactions in living cells are an open system interacting with the environment through chemostats. At a mesoscopic scale, the molecular number of each species in those biochemical reactions can be modeled by the random time-changed Poisson processes.
+To characterize the macroscopic behaviors in the large volume limit, the law of large numbers in path space determines a mean-field limit nonlinear ODE.</description>
     </item>
     
     <item>
