@@ -22,9 +22,9 @@ title = "Publications | Dr. Yuan Gao"
 ### 2. Peer-reviewed Publications:
 [37] Gao, Y., D. Qi. "Mean Field Games for Controlling Coherent Structures in Nonlinear Fluid Systems", to appear at SIAM Journal on Uncertainty Quantification. https://doi.org/10.48550/arXiv.2401.10356
 
-[36] Gao, Y., N. K. Yip. "Homogenization of Wasserstein gradient flows", to appear at European Journal of Applied Mathematics. https://doi.org/10.48550/arXiv.2312.01584
+[36] Gao, Y., N. K. Yip. "Homogenization of Wasserstein gradient flows", European Journal of Applied Mathematics, 1-28. (2025). https://doi.org/10.1017/S0956792525100077 *Full text:* <a href=/GY2025.pdf target="_blank"><i class="fas fa-file-pdf"></i></a>
 
-[35] Gao, Y., J. -G. Liu, Z. Liu. "Some properties on the reversibility and the linear response theory of Langevin dynamics",  Acta Applicandae Mathematicae, (2024) 194:12. https://doi.org/10.1007/s10440-024-00702-w *Full text:* <a href=/GLL2024-AAM.pdf target="_blank"><i class="fas fa-file-pdf"></i></a>
+[35] Gao, Y., J. -G. Liu, Z. Liu. "Some properties on the reversibility and the linear response theory of Langevin dynamics",  Acta Applicandae Mathematicae, 194:12. (2024). https://doi.org/10.1007/s10440-024-00702-w *Full text:* <a href=/GLL2024-AAM.pdf target="_blank"><i class="fas fa-file-pdf"></i></a>
 
 [34] Gao, Y., and J.M. Scott. "Existence and uniqueness of solutions to the Peierls-Nabarro model in anisotropic media", Nonlinearity, 37: 1-30. (2024). https://doi.org/10.1088/1361-6544/ad1763 *Full text:* <a href=/Gao_Scott_2024_Nonlinearity.pdf target="_blank"><i class="fas fa-file-pdf"></i></a>
 
