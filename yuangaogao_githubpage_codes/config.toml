@@ -1,0 +1,69 @@
+title = ""
+baseURL = "https://yuangaogao.github.io/"
+theme = "researcher"
+disableKinds = ["taxonomy", "term"]
+enableEmoji = true
+math = true          # enable KaTeX (https://katex.org/) globally
+googleAnalytics = ""  # add your tracking id
+
+[params]
+  author = "Yuan Gao"
+  description = "A simple monospaced resume theme for Hugo."
+  favicon = "icon.png"  # path to a .ico to use as favicon
+  logo = "logo.ico"  # url or path to a logo to put in the header
+  [params.footer]
+    text = "© 2024 Yuan Gao"
+    url = "https://www.math.purdue.edu/people/profile/gao662.html"
+  [params.style]  # appearance options (can be omitted)
+    fontFamily = "Inconsolata"
+    pageWidth = "1200px"
+    avatarSize = "250px"
+    colorBlack = "#222222"
+    colorRed = "#4682B4"
+  [[params.socialIcons]]
+    icon = "fas fa-envelope"
+    title = "E-mail"
+    url = "mailto:gao662@purdue.edu"
+  [[params.socialIcons]]
+    icon = "fab fa-researchgate"
+    title = "ResearchGate"
+    url = "https://www.researchgate.net/profile/Yuan-Gao-4"
+  [[params.socialIcons]]
+    icon = "fab fa-google"
+    title = "Google Scholar"
+    url = "https://scholar.google.com/citations?user=06tf1aYAAAAJ"
+
+[permalinks]
+  "/" = "/:filename"
+
+[menu]
+  [[menu.main]]
+    name = "Home"
+    url = "https://yuangaogao.github.io/"
+    weight = 1
+  [[menu.main]]
+    name = "Publications"
+    url = "/pubs"
+    weight = 2
+  [[menu.main]]
+    name = "Research"
+    url = "/research"
+    weight = 3
+  [[menu.main]]
+    name = "Activities"
+    url = "/activity"
+    weight = 4
+  [[menu.main]]
+    name = "Teaching"
+    url = "/teach"
+    weight = 5
+  [[menu.main]]
+    name = "CV "
+    url = "/cv_gy_202412.pdf"
+    # 'pre' and 'post' hooks are available
+    post = '<i class="fas fa-file-pdf"></i>'
+    weight = 8
+
+
+[markup.goldmark.renderer]
+  unsafe = true  # allow raw HTML in markdown files
