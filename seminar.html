@@ -61,20 +61,35 @@ This talk is based on joint work with Daniel Mark, Wenjie Gong, Bingtian Ye, Yur
 
 <p><strong>Week 8&nbsp; October 27: </strong> </p>
 <p><strong>Speaker: <a href="https://lchizat.github.io/" target="_blank" rel="noopener">L&eacute;na&iuml;c Chizat</a>, EPFL.</strong></p>
-<p><strong>Title: </strong>TBA</p>
-<p><strong>Abstract: </strong>TBA</p>
+<p><strong>Title: </strong>The Hidden Width of Deep ResNets</p>
+<p><strong>Abstract: </strong> We present a mathematical framework to analyze the training dynamics of deep ResNets that rigorously captures practical architectures (including Transformers) trained from standard random initializations. Our approach combines stochastic approximation of ODEs with propagation-of-chaos arguments. It yields three main insights:
+<li>
+Depth begets width: infinite-depth ResNets of any hidden width behave throughout training as if they were infinitely wide;
+</li>
+<li>
+Unified phase diagram: the phase diagram of Transformers mirrors that of two-layer perceptrons, once the appropriate substitutions are made;
+</li>
+<li>
+Optimal shape scaling: for a given parameter budget P, a Transformer with optimal shape converges to its limiting dynamics at rate P^{-1/6}.
+</li>
+</p>
 <br />
 
 <p><strong>Week 9&nbsp; November 3: </strong> </p>
 <p><strong>Speaker:  <a href="andrew-warren.github.io" target="_blank" rel="noopener">Andrew Warren</a>, University of British Columbia.</strong></p>
-<p><strong>Title: </strong>TBA</p>
-<p><strong>Abstract: </strong>TBA</p>
+<p><strong>Title: </strong>Estimation of 1d structures from empirical data</p>
+<p><strong>Abstract: </strong>Given a data distribution which is concentrated around a one-dimensional structure, can we infer that structure? We consider versions of this problem where the distribution resides in a metric space and the 1d structure is assumed to either be the range of an absolutely continuous curve, or is a connected set of finite 1d Hausdorff measure. In each of these cases, we relate the inference task to solving a variational problem where there is a tradeoff between data fidelity and simplicity of the inferred structure; the variational problems we consider are closely related to the so-called "principal curve" problem of Hastie and Steutzle as well as the "average-distance problem" of Buttazzo, Oudet, and Stepanov. For each of the variational problems under consideration, we establish: existence of minimizers, stability with respect to the data distribution, and consistency of a discretization scheme which is amenable to Lloyd-type numerical methods. Lastly, we consider applications to estimation of stochastic processes from partial observation, as well as the lineage tracing problem from mathematical biology.
+</p>
+<p>
+This talk includes joint work with Anton Afanassiev, Young-Heon Kim, Forest Kobayashi, and Geoff Schiebinger.
+</p>
 <br />
 
 <p><strong>Week 10&nbsp; November 10: </strong> </p>
 <p><strong>Speaker: <a href="https://sites.google.com/view/guannan-zhang/home" target="_blank" rel="noopener">Guannan Zhang</a>, Auburn University.</strong></p>
-<p><strong>Title: </strong>TBA</p>
-<p><strong>Abstract: </strong>TBA</p>
+<p><strong>Title: </strong>Generative Artificial Intelligence for Uncertainty Quantification</p>
+<p><strong>Abstract: </strong>Generative artificial intelligence models-including variational autoencoders, normalizing flows, generative adversarial networks, and diffusion models-have dramatically advanced the realism and quality of generated images, text, and audio. Beyond these tasks, generative models hold great promise as powerful tools for probability density estimation and high-dimensional sampling, which are central to uncertainty quantification (UQ) tasks such as amortized Bayesian inference and data assimilation. However, while research on image synthesis emphasizes producing high-quality individual samples, UQ applications require accurate approximation of statistical quantities of interest rather than visually realistic samples. As a result, direct application of existing generative models to UQ problems can lead to biased approximations or unstable training. In this talk, we will introduce several new generative approaches tailored to UQ. These include training-free diffusion models for density estimation, a score-based nonlinear filter for data assimilation, and training-free conditional diffusion models for amortized Bayesian inference. We will demonstrate their effectiveness across a range of tasks, including density estimation for unimodal and multimodal distributions, learning stochastic dynamical systems, parameter estimation via amortized inference, and scalable data assimilation for atmospheric models.
+</p>
 <br />
 
 <p><strong>Week 11&nbsp; November 17: </strong> </p>
