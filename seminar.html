@@ -104,8 +104,11 @@ This talk includes joint work with Anton Afanassiev, Young-Heon Kim, Forest Koba
 
 <p><strong>Week 13&nbsp; December 1: </strong> </p>
 <p><strong>Speaker: <a href="https://www.yuhuazhu.org" target="_blank" rel="noopener"> Yuhua Zhu</a>, UCLA.</strong></p>
-<p><strong>Title: </strong>Optimal-PhiBE: A PDE-Based Model-Free Algorithm for Continuous-Time Reinforcement Learning</p>
-<p><strong>Abstract: </strong>TBA</p>
+<p><strong>Title: </strong>A Model-Free PDE-Based Framework for Continuous-Time Reinforcement Learning</p>
+<p><strong>Abstract: </strong>This talk addresses continuous-time reinforcement learning (RL) in settings where the system dynamics are governed by a stochastic differential equation but remains unknown, with only discrete-time observations available. Existing approaches face fundamental limitations: model-based PDE methods suffer from non-identifiability, while model-free methods based on the classical reinforcement learning framework suffer from large discretization errors by ignoring the continuous-time structure.
+</p>
+<p>
+We introduce Optimal-PhiBE, an equation that integrates discrete-time information into a continuous-time PDE, combining the strengths of both RL and PDE formulations. In linear-quadratic control, Optimal-PhiBE can even achieve accurate continuous-time optimal policy with only discrete-time information. We further develop model-free algorithms for solving Optimal-PhiBE, requiring only minimal modifications to standard RL methods, and we establish convergence guarantees under model misspecification. Unlike classical RL analyses, whose errors typically blow up as the sampling interval shrinks, the approximation error of PhiBE remains stable and independent of discretization by exploiting the smoothness intrinsic to continuous-time dynamics.</p>
 <br />
 
 <p style="text-align: left;"><strong><font size="6">Past Events:</font></strong></p>
