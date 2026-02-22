@@ -6,12 +6,12 @@ Run from repo root: python scripts/update_seminar.py
 
 import re
 import sys
+from dataclasses import dataclass, field
+from typing import Optional
 from urllib.parse import unquote
 
 import requests
 from bs4 import BeautifulSoup
-from dataclasses import dataclass
-from typing import Optional
 
 GOOGLE_DOC_URL = (
     "https://docs.google.com/document/u/0/d/"
@@ -23,7 +23,6 @@ PAST_EVENTS_MARKER = (
     '<font size="6">Past Events:</font></strong></p>'
 )
 
-# Month names that belong to the spring semester
 SPRING_MONTHS = {"january", "february", "march", "april", "may"}
 
 
@@ -34,7 +33,7 @@ class SeminarEntry:
     affiliation: str = ""
     url: Optional[str] = None
     title: str = ""
-    abstract: str = ""
+    abstract_paras: list = field(default_factory=list)   # one string per paragraph
 
 
 def is_tba(text: str) -> bool:
@@ -42,12 +41,16 @@ def is_tba(text: str) -> bool:
     return not t or t in ("TBA", "WEBPAGE", "WEBSITE", "[WEBPAGE]", "[WEBSITE]")
 
 
+def paras_have_content(paras: list) -> bool:
+    return bool(paras) and any(not is_tba(p) for p in paras)
+
+
 def names_match(a: str, b: str) -> bool:
     return a.strip().lower() == b.strip().lower()
 
 
 def extract_real_url(href: str) -> str:
-    """Unwrap Google redirect URLs to get the actual destination URL."""
+    """Unwrap Google redirect URLs."""
     if "google.com/url" in href:
         m = re.search(r"[?&]q=([^&]+)", href)
         if m:
@@ -67,12 +70,12 @@ def fetch_google_doc() -> dict:
 
     entries: dict = {}
     current: Optional[SeminarEntry] = None
-    state: Optional[str] = None          # None | "abstract"
-    seen_spring = False                   # True once we've hit the first spring week
-    past_spring = False                   # True once spring is over (week numbers reset)
+    state: Optional[str] = None      # None | "abstract"
+    seen_spring = False
+    past_spring = False
     prev_week_num = 0
 
-    # Header: "Week N Month Day: ..."  — no dash between week number and date
+    # "Week N Month Day: ..."  — no dash between week number and date
     week_re = re.compile(r"Week\s+(\d+)\s+(\w+)\s+(\d+)\s*:\s*(.*)", re.IGNORECASE)
 
     for p in soup.find_all("p"):
@@ -85,31 +88,27 @@ def fetch_google_doc() -> dict:
             month_word = m.group(2).lower()
             day = m.group(3)
             rest = m.group(4).strip()
-            date_str = f"{m.group(2)} {day}"   # e.g. "February 2"
+            date_str = f"{m.group(2)} {day}"
 
-            # Detect spring semester boundary
+            # Detect semester boundary
             if month_word in SPRING_MONTHS:
                 if not seen_spring:
                     seen_spring = True
                     prev_week_num = week_num
                 elif week_num < prev_week_num:
-                    # Week numbers reset → we've moved to an older semester
-                    past_spring = True
+                    past_spring = True   # week numbers reset → older semester
                 else:
                     prev_week_num = week_num
             else:
-                # Non-spring month (Sep, Oct, Nov…) → stop collecting
                 if seen_spring:
                     past_spring = True
 
             if past_spring:
-                # Save the last entry, then stop
                 if current is not None:
                     entries[current.date] = current
                     current = None
                 break
 
-            # Save previous entry
             if current is not None:
                 entries[current.date] = current
 
@@ -121,8 +120,7 @@ def fetch_google_doc() -> dict:
                 current = None
                 continue
 
-            # --- Parse URL ---
-            # 1) Check for an <a> tag (may be a Google redirect)
+            # --- URL: first try <a> tag (may be Google-redirected), then bracket text ---
             url: Optional[str] = None
             a_tag = p.find("a")
             if a_tag:
@@ -131,30 +129,26 @@ def fetch_google_doc() -> dict:
                 if candidate.startswith("http"):
                     url = candidate
 
-            # 2) Fallback: extract URL from bracket text [https://...]
             bracket_m = re.search(r"\[([^\]]+)\]", rest)
             if bracket_m and url is None:
-                bracket_content = bracket_m.group(1).strip()
-                if bracket_content.startswith("http"):
-                    url = bracket_content
+                bc = bracket_m.group(1).strip()
+                if bc.startswith("http"):
+                    url = bc
 
-            # Strip the bracket from rest before parsing name/affiliation
+            # Strip bracket from rest before parsing name/affiliation
             rest_clean = re.sub(r"\s*\[[^\]]+\]", "", rest).strip()
 
-            # Check if name is TBA/blank
             name_candidate = re.sub(r"\([^)]*\)", "", rest_clean).strip()
             if not name_candidate or is_tba(name_candidate):
                 current = None
                 continue
 
-            # --- Parse name and affiliation ---
-            # Affiliation may be in parens: "Name (Affiliation)"
+            # Affiliation in parens: "Name (Affiliation)"
             paren_m = re.search(r"\(([^)]+)\)", rest_clean)
             if paren_m:
                 affil = paren_m.group(1).strip()
                 name = rest_clean[: paren_m.start()].strip().rstrip(",").strip()
             else:
-                # Fall back to comma split
                 parts = rest_clean.split(",", 1)
                 name = parts[0].strip()
                 affil = parts[1].strip().rstrip(".") if len(parts) > 1 else ""
@@ -174,14 +168,21 @@ def fetch_google_doc() -> dict:
             state = None
         elif stripped.startswith("Abstract:"):
             val = stripped[len("Abstract:"):].strip()
-            current.abstract = val if not is_tba(val) else ""
-            state = "abstract" if current.abstract else None
-        elif state == "abstract" and stripped:
-            current.abstract += " " + stripped
+            if not is_tba(val):
+                current.abstract_paras = [val]
+                state = "abstract"
+            else:
+                current.abstract_paras = []
+                state = None
+        elif state == "abstract":
+            if stripped:
+                # Non-empty line: continuation paragraph
+                current.abstract_paras.append(stripped)
+            # Empty line: skip — stay in abstract state so the next non-empty
+            # line is still treated as a continuation paragraph
         elif stripped:
             state = None
 
-    # Save the last collected entry
     if current is not None:
         entries[current.date] = current
 
@@ -189,14 +190,55 @@ def fetch_google_doc() -> dict:
 
 
 # ---------------------------------------------------------------------------
-# seminar.html patching helpers
+# Abstract HTML helpers
+# ---------------------------------------------------------------------------
+
+def build_abstract_html(paras: list) -> str:
+    """
+    Render a list of paragraph strings as HTML.
+
+    First paragraph:  <p><strong>Abstract: </strong>TEXT</p>
+    Further paragraphs: <p>TEXT</p>
+    """
+    if not paras:
+        return ""
+    lines = [f"<p><strong>Abstract: </strong>{paras[0]}</p>"]
+    for p in paras[1:]:
+        lines.append(f"<p>{p}</p>")
+    return "\n".join(lines)
+
+
+def parse_existing_abstract_paras(block_html: str) -> list:
+    """
+    Given the raw HTML of an abstract block (first <p> + any continuation
+    <p> tags), return the list of paragraph text strings.
+    """
+    para_re = re.compile(
+        r"<p>(?:<strong>Abstract: </strong>)?(.*?)</p>", re.DOTALL
+    )
+    paras = []
+    for pm in para_re.finditer(block_html):
+        text = pm.group(1).strip()
+        if text:
+            paras.append(text)
+    return paras
+
+
+# Matches the first abstract <p> plus any immediately following plain <p> tags
+# (i.e. without <strong> inside them — those belong to Speaker/Title/etc.)
+ABS_BLOCK_RE = re.compile(
+    r"<p><strong>Abstract: </strong>.*?</p>"   # first paragraph
+    r"(?:\s*<p>(?!<strong>).*?</p>)*",          # zero or more continuation paras
+    re.DOTALL,
+)
+
+
+# ---------------------------------------------------------------------------
+# Speaker helpers
 # ---------------------------------------------------------------------------
 
 def parse_existing_speaker(chunk: str):
-    """
-    Return (name, url, affiliation) from the Speaker line in chunk,
-    or ("", None, "") if absent / TBA.
-    """
+    """Return (name, url, affiliation) from the Speaker line, or ('', None, '')."""
     speaker_re = re.compile(
         r"<p><strong>Speaker:\s*(.*?)</strong></p>", re.DOTALL
     )
@@ -208,7 +250,6 @@ def parse_existing_speaker(chunk: str):
     if not content or is_tba(content):
         return "", None, ""
 
-    # Linked speaker: <a href="...">Name</a>, Affiliation.
     a_m = re.search(
         r'<a\s+href="([^"]+)"[^>]*>([^<]+)</a>(.*)', content, re.DOTALL
     )
@@ -218,7 +259,6 @@ def parse_existing_speaker(chunk: str):
         after = a_m.group(3).strip().lstrip(",").strip().rstrip(".")
         return name, url, after
 
-    # Plain-text speaker: "Name, Affiliation."
     parts = content.rstrip(".").split(",", 1)
     name = parts[0].strip()
     affil = parts[1].strip() if len(parts) > 1 else ""
@@ -231,10 +271,8 @@ def build_speaker_tag(
     existing_name: str,
     existing_affil: str,
 ) -> str:
-    """Return the full <p><strong>Speaker: ...</strong></p> tag to write."""
     name = entry.name.strip()
 
-    # URL: GD URL wins; fall back to keeping existing if names match
     if entry.url:
         url: Optional[str] = entry.url
     elif existing_url and names_match(existing_name, name):
@@ -242,8 +280,12 @@ def build_speaker_tag(
     else:
         url = None
 
-    # Affiliation: existing HTML value is more complete; fall back to GD
-    affil = existing_affil.strip().rstrip(".") if existing_affil else entry.affiliation.strip().rstrip(".")
+    # Prefer existing (more complete) affiliation; fall back to GD
+    affil = (
+        existing_affil.strip().rstrip(".")
+        if existing_affil
+        else entry.affiliation.strip().rstrip(".")
+    )
 
     if url and affil:
         inner = f'<a href="{url}" target="_blank" rel="noopener">{name}</a>, {affil}.'
@@ -257,8 +299,12 @@ def build_speaker_tag(
     return f"<p><strong>Speaker: {inner}</strong></p>"
 
 
+# ---------------------------------------------------------------------------
+# Per-week chunk update
+# ---------------------------------------------------------------------------
+
 def update_chunk(chunk: str, entry: SeminarEntry, date_str: str):
-    """Apply Google-Doc updates to one week's HTML chunk.
+    """Apply GD updates to a single week's HTML chunk.
 
     Returns (new_chunk, list_of_change_descriptions).
     """
@@ -282,37 +328,30 @@ def update_chunk(chunk: str, entry: SeminarEntry, date_str: str):
                 f"  [{date_str}] Title: '{old_val[:40]}' -> '{preview}'"
             )
 
-    # --- Abstract ---
-    if entry.abstract and not is_tba(entry.abstract):
-        abs_re = re.compile(
-            r"(<p><strong>Abstract: </strong>)(.*?)(</p>)", re.DOTALL
-        )
-        m = abs_re.search(chunk)
-        if m and m.group(2) != entry.abstract:
-            chunk = abs_re.sub(
-                lambda x: x.group(1) + entry.abstract + x.group(3),
-                chunk,
-                count=1,
-            )
-            changes.append(f"  [{date_str}] Abstract: updated")
+    # --- Abstract (multi-paragraph) ---
+    if paras_have_content(entry.abstract_paras):
+        m = ABS_BLOCK_RE.search(chunk)
+        if m:
+            existing_paras = parse_existing_abstract_paras(m.group(0))
+            new_paras = entry.abstract_paras
+            if existing_paras != new_paras:
+                new_html = build_abstract_html(new_paras)
+                chunk = chunk[: m.start()] + new_html + chunk[m.end():]
+                changes.append(f"  [{date_str}] Abstract: updated")
 
     # --- Speaker ---
     if entry.name and not is_tba(entry.name):
         existing_name, existing_url, existing_affil = parse_existing_speaker(chunk)
-
         new_speaker_tag = build_speaker_tag(
             entry, existing_url, existing_name, existing_affil
         )
-
         speaker_re = re.compile(
             r"<p><strong>Speaker:\s*.*?</strong></p>", re.DOTALL
         )
         sm = speaker_re.search(chunk)
         if sm and sm.group(0).strip() != new_speaker_tag.strip():
             chunk = speaker_re.sub(new_speaker_tag, chunk, count=1)
-            changes.append(
-                f"  [{date_str}] Speaker: -> '{entry.name}'"
-            )
+            changes.append(f"  [{date_str}] Speaker: -> '{entry.name}'")
 
     return chunk, changes
 
@@ -322,23 +361,16 @@ def update_chunk(chunk: str, entry: SeminarEntry, date_str: str):
 # ---------------------------------------------------------------------------
 
 def patch_seminar_html(gd_entries: dict):
-    """Read seminar.html, patch only the spring section. Return (new_content, changes)."""
+    """Read seminar.html, patch the spring section. Return (new_content, changes)."""
     with open(SEMINAR_HTML, "r", encoding="utf-8") as f:
         content = f.read()
 
     if PAST_EVENTS_MARKER not in content:
-        print(
-            "ERROR: Could not find Past Events marker in seminar.html",
-            file=sys.stderr,
-        )
+        print("ERROR: Could not find Past Events marker in seminar.html", file=sys.stderr)
         return content, []
 
     spring_section, past_section = content.split(PAST_EVENTS_MARKER, 1)
 
-    # Week header in seminar.html:
-    #   <p><strong>Week N&nbsp;  Month Day: </strong> </p>
-    # or no-seminar:
-    #   <p><strong>Week N&nbsp;  March 9: </strong>No seminar, ...</p>
     week_header_re = re.compile(
         r"<p><strong>Week\s+\d+&nbsp;\s*(\w+\s+\d+)\s*:.*?</p>",
         re.DOTALL,
@@ -353,14 +385,12 @@ def patch_seminar_html(gd_entries: dict):
     for i, match in enumerate(matches):
         start = match.start()
         end = (
-            matches[i + 1].start()
-            if i + 1 < len(matches)
-            else len(spring_section)
+            matches[i + 1].start() if i + 1 < len(matches) else len(spring_section)
         )
         chunk = spring_section[start:end]
         date_str = match.group(1).strip()
 
-        # Detect no-seminar week: non-empty text after </strong> in the header <p>
+        # Detect no-seminar week
         header_html = match.group(0)
         after_strong_m = re.search(r"</strong>(.*?)(?=</p>)", header_html, re.DOTALL)
         if after_strong_m:
@@ -370,7 +400,6 @@ def patch_seminar_html(gd_entries: dict):
                 result_parts.append(chunk)
                 continue
 
-        # Look up GD entry (case-insensitive fallback)
         entry = gd_entries.get(date_str)
         if entry is None:
             for k, v in gd_entries.items():
@@ -406,12 +435,13 @@ def main():
     print(f"Found {len(gd_entries)} seminar entries in Google Doc:")
     for date in sorted(gd_entries):
         e = gd_entries[date]
-        title_status = "set" if e.title else "TBA"
-        abstract_status = "set" if e.abstract else "TBA"
+        n_paras = len(e.abstract_paras)
+        abstract_status = f"{n_paras} para(s)" if paras_have_content(e.abstract_paras) else "TBA"
         url_marker = f" url={e.url[:30]}..." if e.url else ""
         print(
             f"  {date}: {e.name or 'TBA'}"
-            f" — title:{title_status} abstract:{abstract_status}{url_marker}"
+            f" — title:{'set' if e.title else 'TBA'}"
+            f" abstract:{abstract_status}{url_marker}"
         )
 
     print("\nPatching seminar.html...")
