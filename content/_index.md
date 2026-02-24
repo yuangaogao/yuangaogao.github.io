@@ -47,7 +47,7 @@ My research is supported by <a href="https://www.nsf.gov/awardsearch/showAward?A
 - Email: [gao662@purdue.edu](mailto:gao662@purdue.edu)
 - Phone: [765-496-0056](tel:765-496-0056)
 - Office: Math 410，<a href="https://goo.gl/maps/bSXJQ5boNxda4Gjy7" target="_blank">150 N. University Street, West Lafayette, IN</a>
-- <a href="https://www.math.purdue.edu/people/profile/gao662.html" target="_blank">My Profile in Math Department.</a>
+- <a href="https://www.math.purdue.edu/people/profile/gao662.html" target="_blank">My Profile in Math Department</a>
 
 [^_^]:
     - Address: <a href="https://goo.gl/maps/wNvacdwTeRJ138yu9" target="_blank">06 Physics Building, 120 Science Drive, NC 27708</a>
