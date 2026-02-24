@@ -17,7 +17,7 @@ GOOGLE_DOC_URL = (
     "https://docs.google.com/document/u/0/d/"
     "19zVZyYweIRvh8Id7rTmP2dpRXY2lF1XOFNkAkQ7geWs/mobilebasic"
 )
-SEMINAR_HTML = "seminar.html"
+SEMINAR_HTML = "static/seminar.html"
 PAST_EVENTS_MARKER = (
     '<p style="text-align: left;"><strong>'
     '<font size="6">Past Events:</font></strong></p>'

@@ -1,3 +1,6 @@
 
 *.xml
 .claude
+public/
+resources/_gen/
+.hugo_build.lock
