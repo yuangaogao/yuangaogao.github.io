@@ -7,10 +7,9 @@ title = "Publications | Dr. Yuan Gao"
 ---
 
 ### 1. Preprints:
+[4] Fu, G., Y. Gao, J. -G. Liu. "Phase-Field Models, Sharp Interface Limits, and Numerical Schemes for Contact Line Dynamics", submitted. https://arxiv.org/abs/2607.17410
 
-[4] Gao, Y., Y. X. Han. "State-Constrained Chemical Reactions: Discrete-to-Continuous Hamilton--Jacobi Equations and Large Deviations",  submitted. https://doi.org/10.48550/arXiv.2509.20747
-
-[3] Gao, Y., Q. J. Lang, F. Lu. "Self-test loss functions for learning weak-form operators and gradient flows", submitted. https://arxiv.org/abs/2412.03506
+[3] Gao, Y., Y. X. Han. "State-Constrained Chemical Reactions: Discrete-to-Continuous Hamilton--Jacobi Equations and Large Deviations", submitted. https://doi.org/10.48550/arXiv.2509.20747
 
 [2] Gao, Y., W. Li, J. -G. Liu. "Fluctuations in Wasserstein dynamics on Graphs", submitted. https://arxiv.org/abs/2408.08505
 
@@ -19,13 +18,15 @@ title = "Publications | Dr. Yuan Gao"
 ---
 
 ### 2. Peer-reviewed Publications:
-[39] Gao, Y., S. Patrizi. "Slow Patterns in Multilayer Dislocation Evolution with Dynamic Boundary Conditions", to appear at SIAM journal on Mathematical Analysis. https://arxiv.org/abs/2502.05962
+[40] Gao, Y., Q. J. Lang, F. Lu. "Self-test loss functions for learning weak-form operators and gradient flows", Journal of Scientific Computing. 108(28): 1-32. (2026). https://doi.org/10.1007/s10915-026-03348-y *Full text:* <a href=/papers/GLL2026.pdf target="_blank"><i class="fas fa-file-pdf"></i></a>
 
-[38] Gao, Y., D. Qi. "Mean Field Games for Controlling Coherent Structures in Nonlinear Fluid Systems", SIAM/ASA Journal on Uncertainty Quantification, 13(4): 1681-1708. (2025). https://doi.org/10.1137/24M1632231 *Full text:* <a href=/papers/GQ2025.pdf target="_blank"><i class="fas fa-file-pdf"></i></a>
+[39] Gao, Y., S. Patrizi. "Slow Patterns in Multilayer Dislocation Evolution with Dynamic Boundary Conditions", SIAM journal on Mathematical Analysis. 58(2): 1017-1038. (2026). https://doi.org/10.1137/25M1733136 *Full text:* <a href=/papers/GP2026.pdf target="_blank"><i class="fas fa-file-pdf"></i></a>
 
-[37] Gao, Y., A. Stephan. "Fast-slow chemical reactions: convergence of Hamilton-Jacobi equation and variational representation", Journal of Differential Equations, 449 (2025). https://doi.org/10.1016/j.jde.2025.113721 *Full text:* <a href=/papers/GS2025.pdf target="_blank"><i class="fas fa-file-pdf"></i></a>
+[38] Gao, Y., N. K. Yip. "Homogenization of Wasserstein gradient flows", European Journal of Applied Mathematics. 37(3): 586-613. (2026). https://doi.org/10.1017/S0956792525100077 *Full text:* <a href=/papers/GY2025.pdf target="_blank"><i class="fas fa-file-pdf"></i></a>
 
-[36] Gao, Y., N. K. Yip. "Homogenization of Wasserstein gradient flows", European Journal of Applied Mathematics. 1-28. (2025). https://doi.org/10.1017/S0956792525100077 *Full text:* <a href=/papers/GY2025.pdf target="_blank"><i class="fas fa-file-pdf"></i></a>
+[37] Gao, Y., D. Qi. "Mean Field Games for Controlling Coherent Structures in Nonlinear Fluid Systems", SIAM/ASA Journal on Uncertainty Quantification, 13(4): 1681-1708. (2025). https://doi.org/10.1137/24M1632231 *Full text:* <a href=/papers/GQ2025.pdf target="_blank"><i class="fas fa-file-pdf"></i></a>
+
+[36] Gao, Y., A. Stephan. "Fast-slow chemical reactions: convergence of Hamilton-Jacobi equation and variational representation", Journal of Differential Equations, 449 (2025). https://doi.org/10.1016/j.jde.2025.113721 *Full text:* <a href=/papers/GS2025.pdf target="_blank"><i class="fas fa-file-pdf"></i></a>
 
 [35] Gao, Y., J. -G. Liu, Z. Liu. "Some properties on the reversibility and the linear response theory of Langevin dynamics",  Acta Applicandae Mathematicae, 194:12. (2024). https://doi.org/10.1007/s10440-024-00702-w *Full text:* <a href=/papers/GLL2024-AAM.pdf target="_blank"><i class="fas fa-file-pdf"></i></a>
 
