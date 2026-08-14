@@ -7,6 +7,10 @@ title = "Publications | Dr. Yuan Gao"
 ---
 
 ### 1. Preprints:
+[6] Deng, Y., Y. Gao, L. Wang. "Homogenization of Time-Discrete Gradient Flows", submitted. https://arxiv.org/abs/2607.25206
+
+[5] Gao, Y., S. He, E. Tadmor. "Sampling and Optimization meet Enhanced Flows", submitted. https://arxiv.org/abs/2608.07329
+
 [4] Fu, G., Y. Gao, J. -G. Liu. "Phase-Field Models, Sharp Interface Limits, and Numerical Schemes for Contact Line Dynamics", submitted. https://arxiv.org/abs/2607.17410
 
 [3] Gao, Y., Y. X. Han. "State-Constrained Chemical Reactions: Discrete-to-Continuous Hamilton--Jacobi Equations and Large Deviations", submitted. https://doi.org/10.48550/arXiv.2509.20747
