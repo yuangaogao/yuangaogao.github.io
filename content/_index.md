@@ -10,7 +10,7 @@ title = "Dr. Yuan Gao"
 - Find me on <a href="https://scholar.google.com/citations?user=06tf1aYAAAAJ" target="_blank">Google Scholar</a> or <a href="https://www.researchgate.net/profile/Yuan-Gao-4" target="_blank">ResearchGate</a>.
 - I mainly work on analysis/computations for PDEs from materials sciences, biology, and microfluids. I recently focus on optimal control and Hamilton-Jacobi equations with applications in transition path theory, mean-field limit, large deviation principle and non-equilibrium chemical reactions.  
 My research is supported by <a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=2204288&HistoricalAwards=false" target="_blank">NSF Award DMS-2204288</a> and <a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=2440651&HistoricalAwards=false" target="_blank">NSF CAREER Award DMS-2440651</a>.
-- [PSU-Purdue-UMD Joint Seminar on Mathematical Data Science](seminar.html)
+- [Delaware-Indiana-Maryland-Ohio-Pennsylvania Joint Seminar on Mathematical Data Science](seminar.html)
 
 ---
 

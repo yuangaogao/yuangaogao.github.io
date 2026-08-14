@@ -1,6 +1,8 @@
 
 *.xml
 .claude
+__pycache__/
+*.pyc
 public/
 resources/_gen/
 .hugo_build.lock
