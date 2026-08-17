@@ -4,7 +4,7 @@ title = "Dr. Yuan Gao"
 {{< figure class="avatar" src="/avatar.jpeg" alt="avatar">}}
 
 # Yuan Gao
-  **Assistant Professor of Mathematics**
+  **Associate Professor of Mathematics**
 - <a href="https://www.math.purdue.edu" target="_blank">Department of Mathematics</a>, <a href="https://www.purdue.edu" target="_blank">Purdue University</a>
 - Email：[gao662@purdue.edu](mailto:gao662@purdue.edu)
 - Find me on <a href="https://scholar.google.com/citations?user=06tf1aYAAAAJ" target="_blank">Google Scholar</a> or <a href="https://www.researchgate.net/profile/Yuan-Gao-4" target="_blank">ResearchGate</a>.
@@ -15,7 +15,8 @@ My research is supported by <a href="https://www.nsf.gov/awardsearch/showAward?A
 ---
 
 #### Appointments & Affiliations
-- Assistant Professor of Mathematics, <a href="https://www.math.purdue.edu" target="_blank">Department of Mathematics</a>, <a href="https://www.purdue.edu" target="_blank">Purdue University</a>, 2021-Now
+- Associate Professor of Mathematics, <a href="https://www.math.purdue.edu" target="_blank">Department of Mathematics</a>, <a href="https://www.purdue.edu" target="_blank">Purdue University</a>, 2026-Now
+- Assistant Professor of Mathematics, <a href="https://www.math.purdue.edu" target="_blank">Department of Mathematics</a>, <a href="https://www.purdue.edu" target="_blank">Purdue University</a>, 2021-2026
 - William W. Elliott Assistant Research Professor, <a href="https://scholars.duke.edu/display/org50000512" target="_blank">Mathematics</a>, <a href="https://scholars.duke.edu/display/org50000491" target="_blank">Trinity College of Arts & Sciences</a>, Duke University, 2019-2021
 [^_^]:
     - Assistant Research Professor of Mathematics, <a href="https://scholars.duke.edu/display/org50000512" target="_blank">Mathematics</a>, <a href="https://scholars.duke.edu/display/org50000491" target="_blank">Trinity College of Arts & Sciences</a>, 2019
