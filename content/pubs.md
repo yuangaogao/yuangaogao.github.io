@@ -7,6 +7,8 @@ title = "Publications | Dr. Yuan Gao"
 ---
 
 ### 1. Preprints:
+[7] Gao, Y., N. K. Yip. "Homogenization and Long Time Behavior of Wasserstein gradient flow for McKean-Vlasov Equation", submitted. https://arxiv.org/abs/2609.31945
+
 [6] Deng, Y., Y. Gao, L. Wang. "Homogenization of Time-Discrete Gradient Flows", submitted. https://arxiv.org/abs/2607.25206
 
 [5] Gao, Y., S. He, E. Tadmor. "Sampling and Optimization meet Enhanced Flows", submitted. https://arxiv.org/abs/2608.07329
