@@ -7,6 +7,8 @@ title = "Publications | Dr. Yuan Gao"
 ---
 
 ### 1. Preprints:
+[8] Gao, Y., Y. Han. "Selection principle for Weak KAM solutions on Rn via large deviation principle for diffusions", submitted. https://arxiv.org/abs/2611.03292
+
 [7] Gao, Y., N. K. Yip. "Homogenization and Long Time Behavior of Wasserstein gradient flow for McKean-Vlasov Equation", submitted. https://arxiv.org/abs/2609.31945
 
 [6] Deng, Y., Y. Gao, L. Wang. "Homogenization of Time-Discrete Gradient Flows", submitted. https://arxiv.org/abs/2607.25206
