@@ -7,8 +7,6 @@ title = "Publications | Dr. Yuan Gao"
 ---
 
 ### 1. Preprints:
-[9] Jutras-Dubé, P., P. Pynadath, J. Lu, Y. Gao, R. Zhang. "Sticky Jump Diffusions: A Unifying View of Masked, Continuous, and Hybrid Diffusion", submitted. https://arxiv.org/abs/2607.10951
-
 [8] Gao, Y., Y. Han. "Selection principle for Weak KAM solutions on Rn via large deviation principle for diffusions", submitted. https://arxiv.org/abs/2611.03292
 
 [7] Gao, Y., N. K. Yip. "Homogenization and Long Time Behavior of Wasserstein gradient flow for McKean-Vlasov Equation", submitted. https://arxiv.org/abs/2609.31945
@@ -28,6 +26,8 @@ title = "Publications | Dr. Yuan Gao"
 ---
 
 ### 2. Peer-reviewed Publications:
+[41] Jutras-Dubé, P., P. Pynadath, J. Lu, Y. Gao, R. Zhang. "Sticky Jump Diffusions: A Unifying View of Masked, Continuous, and Hybrid Diffusion", Neural Information Processing Systems (NeurIPS). (2026). https://arxiv.org/abs/2607.10951
+
 [40] Gao, Y., Q. J. Lang, F. Lu. "Self-test loss functions for learning weak-form operators and gradient flows", Journal of Scientific Computing. 108(28): 1-32. (2026). https://doi.org/10.1007/s10915-026-03348-y *Full text:* <a href=/papers/GLL2026.pdf target="_blank"><i class="fas fa-file-pdf"></i></a>
 
 [39] Gao, Y., S. Patrizi. "Slow Patterns in Multilayer Dislocation Evolution with Dynamic Boundary Conditions", SIAM journal on Mathematical Analysis. 58(2): 1017-1038. (2026). https://doi.org/10.1137/25M1733136 *Full text:* <a href=/papers/GP2026.pdf target="_blank"><i class="fas fa-file-pdf"></i></a>
